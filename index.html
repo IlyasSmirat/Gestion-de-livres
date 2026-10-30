@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js" defer type="module"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Gestion de livres</title>
+</head>
+<body>
+    <div class="crud">
+        <div class="head">
+            <h1>CRUD</h1>
+            <p>Gestion des livres</p>
+        </div>
+
+        <div class="inputs" id="form">
+            <p id="erreurNom" class="hidden">Titre invalide !</p>
+            <input type="text" name="input" id="title" placeholder="Titre de livre">
+            <p id="erreurauteur" class="hidden">Nom invalide !</p>
+            <input type="text" name="input" id="auteur" placeholder="Nom d'Auteur">
+            <p id="erreurannee" class="hidden">L'année doit étre entre 4 chiffres !</p>
+            <input type="number" name="input" id="year" placeholder="Année de publication">
+            <p id="erreurgenre"  class="hidden">Genre invalide !</p>
+            <input type="text" name="input" id="genre" placeholder="Genre littéraire">
+            <button id="btnAjouter">Ajouter le livre</button>
+            <input type="text" name="input" id="Ajouter" placeholder="Chercher un livre">
+        </div>
+
+        <div class="output">
+            <div class="searchButtons">
+                <button type="button" id="buttontitre">Chercher par titre :</button>
+                <button type="button" id="buttonauteur">Chercher par auteur :</button>
+            </div>
+            <div class="flex gap-4 mt-3">
+                <p>Trier par :</p>
+                <select class="options">
+                    <option>Titre</option>
+                    <option>Auteur</option>
+                    <option>Année</option>
+            </div>
+            </select>
+        </div>
+        <p class="hidden" id="searchErreur" ></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Année</th>
+                    <th>Genre</th>
+                </tr>
+            </thead>
+            <tbody id="tablecherche" class="hidden">
+                
+            </tbody>
+        </table>
+        <table>
+        <button type="button" id="viderbutton"> Vider Tous les produits</button>
+            <tr>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Année</th>
+                <th>Genre</th>
+            </tr>
+            <tbody id="tableBody">
+                    <td><button type="button" id="btnModifier">Modifier</button></td>
+                    <td><button type="button" id="btnSupprimer">Supprimer</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
